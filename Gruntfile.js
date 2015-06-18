@@ -99,7 +99,8 @@ module.exports = function(grunt) {
     }
 
   });
-		
+	
+	//Carregamento dos plugins do Grunt
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
@@ -108,8 +109,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 
+	//Apaga a pasta dist e copia o projeto novamente para pasta dist
 	grunt.registerTask('dist', ['clean', 'copy']);
 
+	//Cria a pasta dist e otmiza todas as tarefas
 	grunt.registerTask('default', ['dist', 'concat', 'uglify', 'imagemin', 'sass',]);
 
 };
